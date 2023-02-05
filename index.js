@@ -20,11 +20,6 @@ app.use(
 // get all charater
 app.get("/v1", (req, res) => {
   let thumbnails = [];
-  /**
-   * htpp://localhost:8000/v1?limit=5
-   * query <=> ?
-   * req.query.limit
-   */
 
   const limit = parseInt(req.query.limit);
 
@@ -38,7 +33,9 @@ app.get("/v1", (req, res) => {
         const image = $(this).find("a > img").attr("data-src");
         thumbnails.push({
           name: name,
-          url: "http://localhost:8000/v1" + url.split("/wiki")[1],
+          url:
+            "https://demon-slayer-api-0vbh.onrender.com/v1" +
+            url.split("/wiki")[1],
           image: image,
         });
       });
