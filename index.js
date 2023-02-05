@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
 const axios = require("axios");
 const cheerio = require("cheerio");
 const bodyParser = require("body-parser");
@@ -17,12 +16,6 @@ app.use(
     parameterLimit: 50000,
   })
 );
-app.use(cors());
-
-// route
-app.get("/", (req, res) => {
-  console.log("setup success");
-});
 
 // get all charater
 app.get("/v1", (req, res) => {
